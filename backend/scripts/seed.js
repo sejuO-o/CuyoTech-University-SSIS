@@ -75,31 +75,35 @@ async function main() {
     }
     return courseIds[code];
   }
-  const CCS = 'College of Computing Studies', CBA = 'College of Business Administration', GE = 'General Education';
+  const CCS = 'College of Computing Studies';
 
   // Graded 1st-semester records: [student, code, title, dept, midterm, finals, grade]
   const graded = [
-    [juan, 'CS301', 'Data Structures and Algorithms', CCS, 88, 91, 1.50],
-    [juan, 'CS302', 'Object-Oriented Programming', CCS, 92, 95, 1.25],
-    [juan, 'CS303', 'Database Management Systems', CCS, 85, 87, 1.75],
-    [juan, 'CS304', 'Computer Networks', CCS, 78, 82, 2.00],
-    [juan, 'GE001', 'Purposive Communication', GE, 90, 88, 1.50],
-    [juan, 'GE002', 'Mathematics in the Modern World', GE, 75, 80, 2.25],
-    [maria, 'IT201', 'Web Development', CCS, 90, 93, 1.25],
-    [maria, 'IT202', 'Systems Analysis & Design', CCS, 82, 85, 1.75],
-    [maria, 'IT203', 'Human Computer Interaction', CCS, 88, 90, 1.50],
-    [maria, 'GE001', 'Purposive Communication', GE, 80, 84, 1.75],
-    [maria, 'GE003', 'Ethics', GE, 85, 87, 1.75],
-    [pedro, 'CS401', 'Software Engineering', CCS, 91, 94, 1.25],
-    [pedro, 'CS402', 'Operating Systems', CCS, 84, 88, 1.50],
-    [pedro, 'CS403', 'Human-Computer Interaction', CCS, 79, 83, 2.00],
-    [pedro, 'CS404', 'Capstone Project 1', CCS, 88, 92, 1.50],
-    [pedro, 'GE003', 'Ethics', GE, 86, 89, 1.50],
-    [ana, 'BA101', 'Principles of Management', CBA, 83, 86, 1.75],
-    [ana, 'BA102', 'Business Mathematics', CBA, 76, 79, 2.25],
-    [ana, 'BA103', 'Introduction to Economics', CBA, 81, 84, 2.00],
-    [ana, 'GE001', 'Purposive Communication', GE, 87, 89, 1.50],
-    [ana, 'GE002', 'Mathematics in the Modern World', GE, 72, 75, 2.50],
+    // Juan Dela Cruz — all 7 subjects
+    [juan, 'CCS112', 'Application Development and Emerging Technologies', CCS, 88, 91, 1.50],
+    [juan, 'CSP108', 'Programming Languages',                             CCS, 92, 95, 1.25],
+    [juan, 'CSEG1',  'Game Concept and Design',                           CCS, 85, 87, 1.75],
+    [juan, 'CCS106', 'Social Issues and Professional Practices',          CCS, 78, 82, 2.00],
+    [juan, 'CCS109', 'System Analysis and Design',                        CCS, 90, 88, 1.50],
+    [juan, 'CSP105', 'Algorithm and Complexity',                          CCS, 75, 80, 2.25],
+    [juan, 'ENV101', 'Environmental Science',                             CCS, 82, 85, 1.75],
+    // Maria Santos — 5 subjects
+    [maria, 'CCS112', 'Application Development and Emerging Technologies', CCS, 90, 93, 1.25],
+    [maria, 'CSP108', 'Programming Languages',                             CCS, 82, 85, 1.75],
+    [maria, 'CSEG1',  'Game Concept and Design',                           CCS, 88, 90, 1.50],
+    [maria, 'CCS106', 'Social Issues and Professional Practices',          CCS, 80, 84, 1.75],
+    [maria, 'ENV101', 'Environmental Science',                             CCS, 85, 87, 1.75],
+    // Pedro Reyes — 5 subjects
+    [pedro, 'CCS112', 'Application Development and Emerging Technologies', CCS, 91, 94, 1.25],
+    [pedro, 'CSP108', 'Programming Languages',                             CCS, 84, 88, 1.50],
+    [pedro, 'CCS109', 'System Analysis and Design',                        CCS, 79, 83, 2.00],
+    [pedro, 'CSP105', 'Algorithm and Complexity',                          CCS, 88, 92, 1.50],
+    [pedro, 'CCS106', 'Social Issues and Professional Practices',          CCS, 86, 89, 1.50],
+    // Ana Garcia — 4 subjects
+    [ana, 'CCS112', 'Application Development and Emerging Technologies', CCS, 83, 86, 1.75],
+    [ana, 'CSP108', 'Programming Languages',                             CCS, 76, 79, 2.25],
+    [ana, 'ENV101', 'Environmental Science',                             CCS, 81, 84, 2.00],
+    [ana, 'CCS106', 'Social Issues and Professional Practices',          CCS, 87, 89, 1.50],
   ];
   for (const [sid, code, title, d, mid, fin, grade] of graded) {
     const cid = await course(code, title, d);
@@ -111,23 +115,30 @@ async function main() {
 
   // Current 2nd-semester enrollments (not graded yet): [student, code, title, dept, schedule, room, instructor]
   const current = [
-    [juan, 'CS401', 'Software Engineering', CCS, 'MWF 7:30-8:30 AM', 'Room 301', 'Prof. Reyes'],
-    [juan, 'CS402', 'Operating Systems', CCS, 'TTH 10:30-12:00 PM', 'Room 205', 'Prof. Garcia'],
-    [juan, 'CS403', 'Human-Computer Interaction', CCS, 'MWF 1:00-2:00 PM', 'Room 102', 'Prof. Lim'],
-    [juan, 'CS404', 'Capstone Project 1', CCS, 'TTH 1:00-4:00 PM', 'Lab 401', 'Prof. Cruz'],
-    [juan, 'GE003', 'Ethics', GE, 'MWF 9:00-10:00 AM', 'Room 110', 'Prof. Santos'],
-    [maria, 'IT301', 'Network Administration', CCS, 'MWF 8:00-9:00 AM', 'Lab 202', 'Prof. Cruz'],
-    [maria, 'IT302', 'Web Systems & Technologies', CCS, 'TTH 1:00-2:30 PM', 'Lab 203', 'Prof. Lim'],
-    [maria, 'IT303', 'Information Assurance', CCS, 'MWF 2:00-3:00 PM', 'Room 108', 'Prof. Reyes'],
-    [maria, 'GE004', 'Art Appreciation', GE, 'TTH 8:00-9:30 AM', 'Room 210', 'Prof. Torres'],
-    [pedro, 'CS405', 'Capstone Project 2', CCS, 'TTH 1:00-4:00 PM', 'Lab 401', 'Prof. Cruz'],
-    [pedro, 'CS406', 'Software Quality Assurance', CCS, 'MWF 10:00-11:00 AM', 'Room 302', 'Prof. Garcia'],
-    [pedro, 'CS407', 'Systems Integration', CCS, 'TTH 10:30-12:00 PM', 'Room 205', 'Prof. Mendoza'],
-    [pedro, 'GE003', 'Ethics', GE, 'MWF 9:00-10:00 AM', 'Room 110', 'Prof. Santos'],
-    [ana, 'BA201', 'Financial Accounting', CBA, 'MWF 7:30-8:30 AM', 'Room 105', 'Prof. Dela Rosa'],
-    [ana, 'BA202', 'Microeconomics', CBA, 'TTH 9:00-10:30 AM', 'Room 106', 'Prof. Navarro'],
-    [ana, 'BA203', 'Business Communication', CBA, 'MWF 11:00-12:00 PM', 'Room 107', 'Prof. Santos'],
-    [ana, 'GE001', 'Purposive Communication', GE, 'TTH 1:00-2:30 PM', 'Room 110', 'Prof. Reyes'],
+    // Juan Dela Cruz — all 7 subjects
+    [juan, 'CCS112', 'Application Development and Emerging Technologies', CCS, 'MWF 7:30-8:30 AM',   'Lab 301',  'Prof. Reyes'  ],
+    [juan, 'CSP108', 'Programming Languages',                             CCS, 'TTH 10:30-12:00 PM', 'Room 205', 'Prof. Garcia' ],
+    [juan, 'CSEG1',  'Game Concept and Design',                           CCS, 'MWF 1:00-2:00 PM',   'Lab 402',  'Prof. Lim'    ],
+    [juan, 'CCS106', 'Social Issues and Professional Practices',          CCS, 'TTH 1:00-2:30 PM',   'Room 110', 'Prof. Cruz'   ],
+    [juan, 'CCS109', 'System Analysis and Design',                        CCS, 'MWF 9:00-10:00 AM',  'Room 302', 'Prof. Santos' ],
+    [juan, 'CSP105', 'Algorithm and Complexity',                          CCS, 'TTH 8:00-9:30 AM',   'Room 201', 'Prof. Mendoza'],
+    [juan, 'ENV101', 'Environmental Science',                             CCS, 'MWF 3:00-4:00 PM',   'Room 108', 'Prof. Torres' ],
+    // Maria Santos — 5 subjects
+    [maria, 'CCS112', 'Application Development and Emerging Technologies', CCS, 'MWF 8:00-9:00 AM',   'Lab 301',  'Prof. Reyes'  ],
+    [maria, 'CSP108', 'Programming Languages',                             CCS, 'TTH 1:00-2:30 PM',   'Room 205', 'Prof. Lim'    ],
+    [maria, 'CCS109', 'System Analysis and Design',                        CCS, 'MWF 2:00-3:00 PM',   'Room 302', 'Prof. Garcia' ],
+    [maria, 'CCS106', 'Social Issues and Professional Practices',          CCS, 'TTH 8:00-9:30 AM',   'Room 110', 'Prof. Cruz'   ],
+    [maria, 'ENV101', 'Environmental Science',                             CCS, 'MWF 10:00-11:00 AM', 'Room 108', 'Prof. Torres' ],
+    // Pedro Reyes — 4 subjects
+    [pedro, 'CCS112', 'Application Development and Emerging Technologies', CCS, 'TTH 1:00-4:00 PM',   'Lab 401',  'Prof. Cruz'   ],
+    [pedro, 'CSP105', 'Algorithm and Complexity',                          CCS, 'MWF 10:00-11:00 AM', 'Room 201', 'Prof. Garcia' ],
+    [pedro, 'CSEG1',  'Game Concept and Design',                           CCS, 'TTH 10:30-12:00 PM', 'Lab 402',  'Prof. Mendoza'],
+    [pedro, 'CCS106', 'Social Issues and Professional Practices',          CCS, 'MWF 9:00-10:00 AM',  'Room 110', 'Prof. Santos' ],
+    // Ana Garcia — 4 subjects
+    [ana, 'CCS112', 'Application Development and Emerging Technologies', CCS, 'MWF 7:30-8:30 AM',   'Lab 301',  'Prof. Reyes'  ],
+    [ana, 'CSP108', 'Programming Languages',                             CCS, 'TTH 9:00-10:30 AM',  'Room 205', 'Prof. Navarro'],
+    [ana, 'ENV101', 'Environmental Science',                             CCS, 'MWF 11:00-12:00 PM', 'Room 108', 'Prof. Santos' ],
+    [ana, 'CCS106', 'Social Issues and Professional Practices',          CCS, 'TTH 1:00-2:30 PM',   'Room 110', 'Prof. Reyes'  ],
   ];
   for (const [sid, code, title, d, sched, room, inst] of current) {
     const cid = await course(code, title, d);

@@ -130,17 +130,25 @@ export default function UserManagement() {
             <div className="form-row">
               <div className="form-field">
                 <label>Role <span className="required">*</span></label>
-                <select className="form-control" value={form.role} onChange={e => setForm(f => ({ ...f, role: e.target.value }))}>
+                <select className="form-control" value={form.role}
+                  onChange={e => setForm(f => ({
+                    ...f,
+                    role: e.target.value,
+                    // students and admins have no department
+                    dept: ['student', 'admin'].includes(e.target.value) ? '' : f.dept,
+                  }))}>
                   {ROLES.map(r => <option key={r} value={r}>{r.replace('_',' ')}</option>)}
                 </select>
               </div>
-              <div className="form-field">
-                <label>Department</label>
-                <select className="form-control" value={form.dept} onChange={e => setForm(f => ({ ...f, dept: e.target.value }))}>
-                  <option value="">— None —</option>
-                  {DEPTS.map(d => <option key={d} value={d}>{d}</option>)}
-                </select>
-              </div>
+              {!['student', 'admin'].includes(form.role) && (
+                <div className="form-field">
+                  <label>Department</label>
+                  <select className="form-control" value={form.dept} onChange={e => setForm(f => ({ ...f, dept: e.target.value }))}>
+                    <option value="">— None —</option>
+                    {DEPTS.map(d => <option key={d} value={d}>{d}</option>)}
+                  </select>
+                </div>
+              )}
             </div>
             <p style={{ fontSize: 11, color: '#6b7280', marginBottom: 10 }}>
               Default password will be set to <strong>"password"</strong>. The user must change it on first login.

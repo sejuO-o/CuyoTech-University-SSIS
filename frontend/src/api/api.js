@@ -41,11 +41,15 @@ export async function loginUser(username, password) {
   return user;
 }
 
+export const getMe = () => request('/auth/me');
+
 // ── STUDENT ───────────────────────────────────────────────
 export const getDashboard     = () => request('/student/dashboard');
 export const getProfile       = () => request('/student/profile');
 export const getGrades        = () => request('/student/grades');
 export const getEnrollment    = () => request('/student/enrollment');
+export const getAvailableSubjects = () => request('/student/available-subjects');
+export const enrollInSubject  = (subject_id) => send('POST', '/student/enroll', { subject_id });
 export const getClearance     = () => request('/student/clearance');
 export const getMyPayments    = () => request('/student/payments');
 export const setPaymentMethod = (id, method) => send('PATCH', `/student/payments/${id}/method`, { method });
