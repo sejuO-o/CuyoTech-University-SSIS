@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import {
   IconHome, IconGrades, IconDoc, IconClearance,
-  IconLogout, IconSchool, IconUser,
+  IconLogout, IconSchool, IconUser, IconBookOpen, IconPlusCircle,
 } from './Icons.jsx';
 
 // Extra icons inline (no library)
@@ -50,12 +50,14 @@ function IconSettings({ size = 16 }) {
 // Nav config per role
 const NAV_CONFIG = {
   student: [
-    { to: '/dashboard',        icon: IconHome,      label: 'Homepage'            },
-    { to: '/grades',           icon: IconGrades,    label: 'Grades per Semester' },
-    { to: '/document-request', icon: IconDoc,       label: 'Document Requests'   },
-    { to: '/clearance',        icon: IconClearance, label: 'Clearance Status'    },
-    { to: '/payment',          icon: IconMoney,     label: 'Pay Fees'            },
-    { to: '/profile',          icon: IconUser,      label: 'My Profile'          },
+    { to: '/dashboard',           icon: IconHome,        label: 'Homepage'            },
+    { to: '/grades',              icon: IconGrades,      label: 'Grades per Semester' },
+    { to: '/enrolled-subjects',   icon: IconBookOpen,    label: 'Enrolled Subjects'   },
+    { to: '/enrollment',          icon: IconPlusCircle,  label: 'Enrollment'          },
+    { to: '/document-request',    icon: IconDoc,         label: 'Document Requests'   },
+    { to: '/clearance',           icon: IconClearance,   label: 'Clearance Status'    },
+    { to: '/payment',             icon: IconMoney,       label: 'Pay Fees'            },
+    { to: '/profile',             icon: IconUser,        label: 'My Profile'          },
   ],
   registrar: [
     { to: '/registrar/dashboard', icon: IconHome,      label: 'Dashboard'          },
@@ -63,19 +65,23 @@ const NAV_CONFIG = {
     { to: '/registrar/enrollment',icon: IconClipboard, label: 'Enrollment'         },
     { to: '/registrar/grades',    icon: IconPencil,    label: 'Grades Encoding'    },
     { to: '/registrar/documents', icon: IconDoc,       label: 'Document Requests'  },
+    { to: '/registrar/account',   icon: IconUser,      label: 'Manage Account'     },
   ],
   cashier: [
-    { to: '/cashier/dashboard', icon: IconHome,  label: 'Dashboard'       },
-    { to: '/cashier/payments',  icon: IconMoney, label: 'Payment Records' },
-    { to: '/cashier/fees',      icon: IconSettings, label: 'Fee Schedule' },
+    { to: '/cashier/dashboard', icon: IconHome,     label: 'Dashboard'       },
+    { to: '/cashier/payments',  icon: IconMoney,    label: 'Payment Records' },
+    { to: '/cashier/fees',      icon: IconSettings, label: 'Fee Schedule'    },
+    { to: '/cashier/account',   icon: IconUser,     label: 'Manage Account'  },
   ],
   dept_staff: [
-    { to: '/dept/dashboard',  icon: IconHome,      label: 'Dashboard'         },
-    { to: '/dept/clearance',  icon: IconClearance, label: 'Clearance Approval'},
+    { to: '/dept/dashboard', icon: IconHome,      label: 'Dashboard'          },
+    { to: '/dept/clearance', icon: IconClearance, label: 'Clearance Approval' },
+    { to: '/dept/account',   icon: IconUser,      label: 'Manage Account'     },
   ],
   admin: [
-    { to: '/admin/dashboard', icon: IconHome,     label: 'Dashboard'     },
-    { to: '/admin/users',     icon: IconUsers,    label: 'User Accounts' },
+    { to: '/admin/dashboard', icon: IconHome,   label: 'Dashboard'      },
+    { to: '/admin/users',     icon: IconUsers,  label: 'User Accounts'  },
+    { to: '/admin/account',   icon: IconUser,   label: 'Manage Account' },
   ],
 };
 

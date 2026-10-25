@@ -13,6 +13,9 @@ import DocumentRequestPage from './pages/DocumentRequestPage.jsx';
 import ClearancePage       from './pages/ClearancePage.jsx';
 import PaymentPage         from './pages/PaymentPage.jsx';
 import ProfilePage         from './pages/ProfilePage.jsx';
+import EnrolledSubjectsPage from './pages/EnrolledSubjectsPage.jsx';
+import EnrollmentPage      from './pages/EnrollmentPage.jsx';
+import AccountPage         from './pages/AccountPage.jsx';
 
 // Registrar
 import RegistrarDashboard  from './pages/registrar/RegistrarDashboard.jsx';
@@ -63,12 +66,15 @@ export default function App() {
               <MainLayout />
             </ProtectedRoute>
           }>
-            <Route path="dashboard"        element={<DashboardPage />} />
-            <Route path="grades"           element={<GradesPage />} />
-            <Route path="document-request" element={<DocumentRequestPage />} />
-            <Route path="clearance"        element={<ClearancePage />} />
-            <Route path="payment"          element={<PaymentPage />} />
-            <Route path="profile"          element={<ProfilePage />} />
+            <Route path="dashboard"          element={<DashboardPage />} />
+            <Route path="grades"             element={<GradesPage />} />
+            <Route path="enrolled-subjects"  element={<EnrolledSubjectsPage />} />
+            <Route path="enrollment"         element={<EnrollmentPage />} />
+            <Route path="document-request"   element={<DocumentRequestPage />} />
+            <Route path="clearance"          element={<ClearancePage />} />
+            <Route path="payment"            element={<PaymentPage />} />
+            <Route path="profile"            element={<ProfilePage />} />
+            <Route path="account"            element={<AccountPage />} />
           </Route>
 
           {/* ══════════════════════════════════════════
@@ -84,6 +90,7 @@ export default function App() {
             <Route path="registrar/enrollment" element={<EnrollmentManagement />} />
             <Route path="registrar/grades"     element={<GradesEncoding />} />
             <Route path="registrar/documents"  element={<DocumentApproval />} />
+            <Route path="registrar/account"    element={<AccountPage />} />
           </Route>
 
           {/* ══════════════════════════════════════════
@@ -97,6 +104,7 @@ export default function App() {
             <Route path="cashier/dashboard" element={<CashierDashboard />} />
             <Route path="cashier/payments"  element={<PaymentRecords />} />
             <Route path="cashier/fees"      element={<FeeSetup />} />
+            <Route path="cashier/account"   element={<AccountPage />} />
           </Route>
 
           {/* ══════════════════════════════════════════
@@ -109,6 +117,7 @@ export default function App() {
           }>
             <Route path="dept/dashboard" element={<DeptDashboard />} />
             <Route path="dept/clearance" element={<ClearanceApproval />} />
+            <Route path="dept/account"   element={<AccountPage />} />
           </Route>
 
           {/* ══════════════════════════════════════════
@@ -121,6 +130,7 @@ export default function App() {
           }>
             <Route path="admin/dashboard" element={<AdminDashboard />} />
             <Route path="admin/users"     element={<UserManagement />} />
+            <Route path="admin/account"   element={<AccountPage />} />
           </Route>
 
           {/* ── Catch-all ── */}

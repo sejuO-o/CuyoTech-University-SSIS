@@ -41,59 +41,62 @@ export const MOCK_COURSES = [
 
 // ── GRADES (for all 4 students) ───────────────────────────
 export const MOCK_GRADES = [
-  // Juan Dela Cruz — BSCS 3rd year
-  { grade_id: 1,  student_id: 1, subject_code: 'CS301', subject_name: 'Data Structures and Algorithms',  units: 3, midterm: 88, finals: 91, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 2,  student_id: 1, subject_code: 'CS302', subject_name: 'Object-Oriented Programming',    units: 3, midterm: 92, finals: 95, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 3,  student_id: 1, subject_code: 'CS303', subject_name: 'Database Management Systems',    units: 3, midterm: 85, finals: 87, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 4,  student_id: 1, subject_code: 'CS304', subject_name: 'Computer Networks',              units: 3, midterm: 78, finals: 82, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 5,  student_id: 1, subject_code: 'GE001', subject_name: 'Purposive Communication',        units: 3, midterm: 90, finals: 88, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 6,  student_id: 1, subject_code: 'GE002', subject_name: 'Mathematics in the Modern World', units: 3, midterm: 75, finals: 80, final_grade: '2.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  // Juan Dela Cruz — BSCS 3rd year (1st Sem graded)
+  { grade_id: 1,  student_id: 1, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, midterm: 88, finals: 91, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 2,  student_id: 1, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, midterm: 92, finals: 95, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 3,  student_id: 1, subject_code: 'CSEG1',  subject_name: 'Game Concept and Design',                          units: 3, midterm: 85, finals: 87, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 4,  student_id: 1, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, midterm: 78, finals: 82, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 5,  student_id: 1, subject_code: 'CCS109', subject_name: 'System Analysis and Design',                       units: 3, midterm: 90, finals: 88, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 6,  student_id: 1, subject_code: 'CSP105', subject_name: 'Algorithm and Complexity',                         units: 3, midterm: 75, finals: 80, final_grade: '2.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 7,  student_id: 1, subject_code: 'ENV101', subject_name: 'Environmental Science',                            units: 3, midterm: 82, finals: 85, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
 
-  // Maria Santos — BSIT 2nd year
-  { grade_id: 7,  student_id: 2, subject_code: 'IT201', subject_name: 'Web Development',                units: 3, midterm: 90, finals: 93, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 8,  student_id: 2, subject_code: 'IT202', subject_name: 'Systems Analysis & Design',      units: 3, midterm: 82, finals: 85, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 9,  student_id: 2, subject_code: 'IT203', subject_name: 'Human Computer Interaction',     units: 3, midterm: 88, finals: 90, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 10, student_id: 2, subject_code: 'GE001', subject_name: 'Purposive Communication',        units: 3, midterm: 80, finals: 84, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 11, student_id: 2, subject_code: 'GE003', subject_name: 'Ethics',                         units: 3, midterm: 85, finals: 87, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  // Maria Santos — BSCS 2nd year (1st Sem graded)
+  { grade_id: 8,  student_id: 2, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, midterm: 90, finals: 93, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 9,  student_id: 2, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, midterm: 82, finals: 85, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 10, student_id: 2, subject_code: 'CSEG1',  subject_name: 'Game Concept and Design',                          units: 3, midterm: 88, finals: 90, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 11, student_id: 2, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, midterm: 80, finals: 84, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 12, student_id: 2, subject_code: 'ENV101', subject_name: 'Environmental Science',                            units: 3, midterm: 85, finals: 87, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
 
-  // Pedro Reyes — BSCS 4th year
-  { grade_id: 12, student_id: 3, subject_code: 'CS401', subject_name: 'Software Engineering',           units: 3, midterm: 91, finals: 94, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 13, student_id: 3, subject_code: 'CS402', subject_name: 'Operating Systems',              units: 3, midterm: 84, finals: 88, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 14, student_id: 3, subject_code: 'CS403', subject_name: 'Human-Computer Interaction',     units: 3, midterm: 79, finals: 83, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 15, student_id: 3, subject_code: 'CS404', subject_name: 'Capstone Project 1',             units: 3, midterm: 88, finals: 92, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 16, student_id: 3, subject_code: 'GE003', subject_name: 'Ethics',                         units: 3, midterm: 86, finals: 89, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  // Pedro Reyes — BSCS 4th year (1st Sem graded)
+  { grade_id: 13, student_id: 3, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, midterm: 91, finals: 94, final_grade: '1.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 14, student_id: 3, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, midterm: 84, finals: 88, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 15, student_id: 3, subject_code: 'CCS109', subject_name: 'System Analysis and Design',                       units: 3, midterm: 79, finals: 83, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 16, student_id: 3, subject_code: 'CSP105', subject_name: 'Algorithm and Complexity',                         units: 3, midterm: 88, finals: 92, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 17, student_id: 3, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, midterm: 86, finals: 89, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
 
-  // Ana Garcia — BSBA 1st year
-  { grade_id: 17, student_id: 4, subject_code: 'BA101', subject_name: 'Principles of Management',       units: 3, midterm: 83, finals: 86, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 18, student_id: 4, subject_code: 'BA102', subject_name: 'Business Mathematics',           units: 3, midterm: 76, finals: 79, final_grade: '2.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 19, student_id: 4, subject_code: 'BA103', subject_name: 'Introduction to Economics',      units: 3, midterm: 81, finals: 84, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 20, student_id: 4, subject_code: 'GE001', subject_name: 'Purposive Communication',        units: 3, midterm: 87, finals: 89, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
-  { grade_id: 21, student_id: 4, subject_code: 'GE002', subject_name: 'Mathematics in the Modern World', units: 3, midterm: 72, finals: 75, final_grade: '2.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  // Ana Garcia — BSCS 1st year (1st Sem graded)
+  { grade_id: 18, student_id: 4, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, midterm: 83, finals: 86, final_grade: '1.75', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 19, student_id: 4, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, midterm: 76, finals: 79, final_grade: '2.25', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 20, student_id: 4, subject_code: 'ENV101', subject_name: 'Environmental Science',                             units: 3, midterm: 81, finals: 84, final_grade: '2.00', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
+  { grade_id: 21, student_id: 4, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',          units: 3, midterm: 87, finals: 89, final_grade: '1.50', remarks: 'PASSED', semester: '1st Semester', school_year: '2024-2025' },
 ];
 
-// ── ENROLLMENTS (for all 4 students) ─────────────────────
+// ── ENROLLMENTS (for all 4 students, 2nd Semester — CCS subjects) ─────────────────────
 export const MOCK_ENROLLMENT = [
   // Juan Dela Cruz
-  { enrollment_id: 1,  student_id: 1, subject_code: 'CS401', subject_name: 'Software Engineering',        units: 3, schedule: 'MWF 7:30-8:30 AM',   room: 'Room 301', instructor: 'Prof. Reyes',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 2,  student_id: 1, subject_code: 'CS402', subject_name: 'Operating Systems',           units: 3, schedule: 'TTH 10:30-12:00 PM', room: 'Room 205', instructor: 'Prof. Garcia',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 3,  student_id: 1, subject_code: 'CS403', subject_name: 'Human-Computer Interaction',  units: 3, schedule: 'MWF 1:00-2:00 PM',   room: 'Room 102', instructor: 'Prof. Lim',     semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 4,  student_id: 1, subject_code: 'CS404', subject_name: 'Capstone Project 1',          units: 3, schedule: 'TTH 1:00-4:00 PM',   room: 'Lab 401',  instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 5,  student_id: 1, subject_code: 'GE003', subject_name: 'Ethics',                      units: 3, schedule: 'MWF 9:00-10:00 AM',  room: 'Room 110', instructor: 'Prof. Santos',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 1,  student_id: 1, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, schedule: 'MWF 7:30-8:30 AM',   room: 'Lab 301',  instructor: 'Prof. Reyes',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 2,  student_id: 1, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, schedule: 'TTH 10:30-12:00 PM', room: 'Room 205', instructor: 'Prof. Garcia',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 3,  student_id: 1, subject_code: 'CSEG1',  subject_name: 'Game Concept and Design',                          units: 3, schedule: 'MWF 1:00-2:00 PM',   room: 'Lab 402',  instructor: 'Prof. Lim',     semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 4,  student_id: 1, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, schedule: 'TTH 1:00-2:30 PM',   room: 'Room 110', instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 5,  student_id: 1, subject_code: 'CCS109', subject_name: 'System Analysis and Design',                       units: 3, schedule: 'MWF 9:00-10:00 AM',  room: 'Room 302', instructor: 'Prof. Santos',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 6,  student_id: 1, subject_code: 'CSP105', subject_name: 'Algorithm and Complexity',                         units: 3, schedule: 'TTH 8:00-9:30 AM',   room: 'Room 201', instructor: 'Prof. Mendoza', semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 7,  student_id: 1, subject_code: 'ENV101', subject_name: 'Environmental Science',                            units: 3, schedule: 'MWF 3:00-4:00 PM',   room: 'Room 108', instructor: 'Prof. Torres',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
   // Maria Santos
-  { enrollment_id: 6,  student_id: 2, subject_code: 'IT301', subject_name: 'Network Administration',      units: 3, schedule: 'MWF 8:00-9:00 AM',   room: 'Lab 202',  instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 7,  student_id: 2, subject_code: 'IT302', subject_name: 'Web Systems & Technologies',  units: 3, schedule: 'TTH 1:00-2:30 PM',   room: 'Lab 203',  instructor: 'Prof. Lim',     semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 8,  student_id: 2, subject_code: 'IT303', subject_name: 'Information Assurance',       units: 3, schedule: 'MWF 2:00-3:00 PM',   room: 'Room 108', instructor: 'Prof. Reyes',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 9,  student_id: 2, subject_code: 'GE004', subject_name: 'Art Appreciation',            units: 3, schedule: 'TTH 8:00-9:30 AM',   room: 'Room 210', instructor: 'Prof. Torres',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 8,  student_id: 2, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, schedule: 'MWF 8:00-9:00 AM',   room: 'Lab 301',  instructor: 'Prof. Reyes',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 9,  student_id: 2, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, schedule: 'TTH 1:00-2:30 PM',   room: 'Room 205', instructor: 'Prof. Lim',     semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 10, student_id: 2, subject_code: 'CCS109', subject_name: 'System Analysis and Design',                       units: 3, schedule: 'MWF 2:00-3:00 PM',   room: 'Room 302', instructor: 'Prof. Garcia',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 11, student_id: 2, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, schedule: 'TTH 8:00-9:30 AM',   room: 'Room 110', instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 12, student_id: 2, subject_code: 'ENV101', subject_name: 'Environmental Science',                            units: 3, schedule: 'MWF 10:00-11:00 AM', room: 'Room 108', instructor: 'Prof. Torres',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
   // Pedro Reyes
-  { enrollment_id: 10, student_id: 3, subject_code: 'CS405', subject_name: 'Capstone Project 2',          units: 3, schedule: 'TTH 1:00-4:00 PM',   room: 'Lab 401',  instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 11, student_id: 3, subject_code: 'CS406', subject_name: 'Software Quality Assurance',  units: 3, schedule: 'MWF 10:00-11:00 AM', room: 'Room 302', instructor: 'Prof. Garcia',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 12, student_id: 3, subject_code: 'CS407', subject_name: 'Systems Integration',         units: 3, schedule: 'TTH 10:30-12:00 PM', room: 'Room 205', instructor: 'Prof. Mendoza', semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 13, student_id: 3, subject_code: 'GE003', subject_name: 'Ethics',                      units: 3, schedule: 'MWF 9:00-10:00 AM',  room: 'Room 110', instructor: 'Prof. Santos',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 13, student_id: 3, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, schedule: 'TTH 1:00-4:00 PM',   room: 'Lab 401',  instructor: 'Prof. Cruz',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 14, student_id: 3, subject_code: 'CSP105', subject_name: 'Algorithm and Complexity',                         units: 3, schedule: 'MWF 10:00-11:00 AM', room: 'Room 201', instructor: 'Prof. Garcia',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 15, student_id: 3, subject_code: 'CSEG1',  subject_name: 'Game Concept and Design',                          units: 3, schedule: 'TTH 10:30-12:00 PM', room: 'Lab 402',  instructor: 'Prof. Mendoza', semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 16, student_id: 3, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, schedule: 'MWF 9:00-10:00 AM',  room: 'Room 110', instructor: 'Prof. Santos',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
   // Ana Garcia
-  { enrollment_id: 14, student_id: 4, subject_code: 'BA201', subject_name: 'Financial Accounting',        units: 3, schedule: 'MWF 7:30-8:30 AM',   room: 'Room 105', instructor: 'Prof. Dela Rosa', semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 15, student_id: 4, subject_code: 'BA202', subject_name: 'Microeconomics',              units: 3, schedule: 'TTH 9:00-10:30 AM',  room: 'Room 106', instructor: 'Prof. Navarro',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 16, student_id: 4, subject_code: 'BA203', subject_name: 'Business Communication',      units: 3, schedule: 'MWF 11:00-12:00 PM', room: 'Room 107', instructor: 'Prof. Santos',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
-  { enrollment_id: 17, student_id: 4, subject_code: 'GE001', subject_name: 'Purposive Communication',     units: 3, schedule: 'TTH 1:00-2:30 PM',   room: 'Room 110', instructor: 'Prof. Reyes',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 17, student_id: 4, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, schedule: 'MWF 7:30-8:30 AM',   room: 'Lab 301',  instructor: 'Prof. Reyes',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 18, student_id: 4, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, schedule: 'TTH 9:00-10:30 AM',  room: 'Room 205', instructor: 'Prof. Navarro',  semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 19, student_id: 4, subject_code: 'ENV101', subject_name: 'Environmental Science',                             units: 3, schedule: 'MWF 11:00-12:00 PM', room: 'Room 108', instructor: 'Prof. Santos',   semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
+  { enrollment_id: 20, student_id: 4, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',          units: 3, schedule: 'TTH 1:00-2:30 PM',   room: 'Room 110', instructor: 'Prof. Reyes',    semester: '2nd Semester', school_year: '2024-2025', status: 'Enrolled' },
 ];
 
 // ── DOCUMENT REQUESTS ─────────────────────────────────────
@@ -191,16 +194,13 @@ export const MOCK_FEE_SCHEDULE = [
   { fee_id: 5, fee_name: 'Student Activity Fund', amount: 200,   per: 'semester', applicable_to: 'All'    },
 ];
 
-// ── SUBJECTS ─────────────────────────────────────────────
+// ── SUBJECTS (CCS — Computer Science subjects only) ───────
 export const MOCK_SUBJECTS = [
-  { subject_id: 1,  subject_code: 'CS301', subject_name: 'Data Structures and Algorithms',  units: 3, course_code: 'BSCS' },
-  { subject_id: 2,  subject_code: 'CS302', subject_name: 'Object-Oriented Programming',     units: 3, course_code: 'BSCS' },
-  { subject_id: 3,  subject_code: 'CS401', subject_name: 'Software Engineering',            units: 3, course_code: 'BSCS' },
-  { subject_id: 4,  subject_code: 'CS402', subject_name: 'Operating Systems',               units: 3, course_code: 'BSCS' },
-  { subject_id: 5,  subject_code: 'IT201', subject_name: 'Web Development',                 units: 3, course_code: 'BSIT' },
-  { subject_id: 6,  subject_code: 'IT301', subject_name: 'Network Administration',          units: 3, course_code: 'BSIT' },
-  { subject_id: 7,  subject_code: 'BA101', subject_name: 'Principles of Management',        units: 3, course_code: 'BSBA' },
-  { subject_id: 8,  subject_code: 'BA201', subject_name: 'Financial Accounting',            units: 3, course_code: 'BSBA' },
-  { subject_id: 9,  subject_code: 'GE001', subject_name: 'Purposive Communication',         units: 3, course_code: 'All'  },
-  { subject_id: 10, subject_code: 'GE003', subject_name: 'Ethics',                          units: 3, course_code: 'All'  },
+  { subject_id: 1, subject_code: 'CCS112', subject_name: 'Application Development and Emerging Technologies', units: 3, course_code: 'BSCS' },
+  { subject_id: 2, subject_code: 'CSP108', subject_name: 'Programming Languages',                             units: 3, course_code: 'BSCS' },
+  { subject_id: 3, subject_code: 'CSEG1',  subject_name: 'Game Concept and Design',                          units: 3, course_code: 'BSCS' },
+  { subject_id: 4, subject_code: 'CCS106', subject_name: 'Social Issues and Professional Practices',         units: 3, course_code: 'BSCS' },
+  { subject_id: 5, subject_code: 'CCS109', subject_name: 'System Analysis and Design',                       units: 3, course_code: 'BSCS' },
+  { subject_id: 6, subject_code: 'CSP105', subject_name: 'Algorithm and Complexity',                         units: 3, course_code: 'BSCS' },
+  { subject_id: 7, subject_code: 'ENV101', subject_name: 'Environmental Science',                            units: 3, course_code: 'BSCS' },
 ];

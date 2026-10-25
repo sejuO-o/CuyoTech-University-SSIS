@@ -3,6 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { IconBell, IconMenu, IconUser } from './Icons.jsx';
 
+// Role → account page path
+const ACCOUNT_PATH = {
+  student:    '/account',
+  registrar:  '/registrar/account',
+  cashier:    '/cashier/account',
+  dept_staff: '/dept/account',
+  admin:      '/admin/account',
+};
+
 // Close dropdown when clicking outside
 function useOutsideClick(ref, handler) {
   useEffect(() => {
@@ -77,10 +86,10 @@ export default function Topbar() {
               <div className="topbar-dropdown-header">Account</div>
               <button
                 className="topbar-dropdown-item"
-                onClick={() => { navigate('/profile'); setShowProfile(false); }}
+                onClick={() => { navigate(ACCOUNT_PATH[user?.role] || '/account'); setShowProfile(false); }}
               >
                 <IconUser size={14} />
-                Manage Profile
+                Manage Account
               </button>
               <div className="topbar-dropdown-divider" />
               <button

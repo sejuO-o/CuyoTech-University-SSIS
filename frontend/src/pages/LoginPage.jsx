@@ -115,10 +115,6 @@ export default function LoginPage() {
             {loading ? 'Signing in...' : 'LOGIN'}
           </button>
         </form>
-
-        <div className="login-links" style={{ marginTop: 14 }}>
-          <a href="#" onClick={e => e.preventDefault()}>Forgot Password?</a>
-        </div>
       </div>
     </div>
   );

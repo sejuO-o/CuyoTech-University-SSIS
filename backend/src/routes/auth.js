@@ -2,8 +2,28 @@ import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { pool } from '../db.js';
+import { requireAuth } from '../middleware/auth.js';
 
 const router = Router();
+
+// GET /api/auth/me  — returns the logged-in user's full profile (all roles)
+router.get('/me', requireAuth, async (req, res) => {
+  const [rows] = await pool.query(
+    `SELECT u.userId AS id, u.username, u.fullName AS full_name, u.email,
+            u.contactNumber AS contact_number, u.address, u.role, u.status,
+            d.deptName AS dept,
+            s.studentId AS student_id, s.studentNum AS student_number,
+            s.yearLevel AS year_level, p.programName AS course_name, p.programCode AS course_code
+       FROM Users u
+       LEFT JOIN Department d ON d.deptId = u.deptId
+       LEFT JOIN Student s ON s.userId = u.userId
+       LEFT JOIN Program p ON p.programId = s.programId
+      WHERE u.userId = ?`,
+    [req.user.userId]
+  );
+  if (!rows[0]) return res.status(404).json({ message: 'User not found.' });
+  res.json(rows[0]);
+});
 
 // POST /api/auth/login  { student_number | username, password } -> { token, user }
 router.post('/login', async (req, res) => {

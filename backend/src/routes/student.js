@@ -54,6 +54,58 @@ router.get('/enrollment', async (req, res) => {
   res.json(rows);
 });
 
+// GET /api/student/available-subjects  (all CCS subjects not yet enrolled this semester)
+router.get('/available-subjects', async (req, res) => {
+  const [rows] = await pool.query(
+    `SELECT c.courseId AS subject_id, c.courseCode AS subject_code,
+            c.courseTitle AS subject_name, c.creditUnits AS units
+       FROM Course c
+      WHERE c.courseCode IN ('CCS112','CSP108','CSEG1','CCS106','CCS109','CSP105','ENV101')
+        AND c.courseId NOT IN (
+          SELECT e.courseId FROM Enrollment e
+           WHERE e.studentId = ?
+             AND e.academicYear = '2024-2025'
+             AND e.semester = '2nd Semester'
+             AND e.status IN ('Enrolled', 'Pending')
+        )
+      ORDER BY c.courseCode`,
+    [req.user.student_id]
+  );
+  res.json(rows);
+});
+
+// POST /api/student/enroll  { subject_id }
+router.post('/enroll', async (req, res) => {
+  const { subject_id } = req.body || {};
+  if (!subject_id) return res.status(400).json({ message: 'subject_id is required.' });
+
+  // Guard: check the subject exists and is one of the allowed CCS subjects
+  const [[course]] = await pool.query(
+    `SELECT courseId, courseCode FROM Course
+      WHERE courseId = ?
+        AND courseCode IN ('CCS112','CSP108','CSEG1','CCS106','CCS109','CSP105','ENV101')`,
+    [subject_id]
+  );
+  if (!course) return res.status(404).json({ message: 'Subject not found.' });
+
+  // Guard: already enrolled?
+  const [[existing]] = await pool.query(
+    `SELECT enrollmentId FROM Enrollment
+      WHERE studentId = ? AND courseId = ?
+        AND academicYear = '2024-2025' AND semester = '2nd Semester'
+        AND status IN ('Enrolled', 'Pending')`,
+    [req.user.student_id, subject_id]
+  );
+  if (existing) return res.status(409).json({ message: 'Already enrolled in this subject.' });
+
+  await pool.query(
+    `INSERT INTO Enrollment (studentId, courseId, academicYear, semester, status)
+     VALUES (?, ?, '2024-2025', '2nd Semester', 'Pending')`,
+    [req.user.student_id, subject_id]
+  );
+  res.status(201).json({ success: true, message: `Enrollment request for ${course.courseCode} submitted. Pending registrar approval.` });
+});
+
 // GET /api/student/clearance
 router.get('/clearance', async (req, res) => {
   const [rows] = await pool.query(
